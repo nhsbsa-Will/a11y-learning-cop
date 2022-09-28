@@ -65,7 +65,7 @@
       <div class="nhsuk-phase-banner nhsuk-u-margin-bottom-5 no-print" role="region">
         <p class="nhsuk-phase-banner__content">
           <strong class="nhsuk-tag nhsuk-phase-banner__content__tag">
-            DEMO
+            GOOD
           </strong>
           <span class="nhsuk-phase-banner__text">This is page is for demonstration purposes</span>
         </p>
@@ -73,23 +73,57 @@
       <main class="nhsuk-main-wrapper nhsuk-u-margin-top-1 nhsuk-u-padding-top-1" id="main-content" role="main">
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-two-thirds">
-            <div class="nhsuk-form-group" id="question_selectedoption">
-              <h1 id="page_h1_title" class="nhsuk-heading-l">Learning CoP - Accessibility</h1>
-              <ul class="nhsuk-list nhsuk-list--bullet">
-                <li><a href="/bad-form.html">Inaccessible example page</a></li>
-                <li><a href="/good-form.html">Accessible example page</a></li>
-                <!-- <li><a href="/resources.html">Resources</a></li> -->
-              </ul>
-            </div>
+            <form class="form">
+              <fieldset class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                  <h1 class="nhsuk-fieldset__heading">Application details</h1>
+                </legend>
+                <details class="nhsuk-details">
+                  <summary class="nhsuk-details__summary">
+                    <span class="nhsuk-details__summary-text">
+                      Why we need your information
+                    </span>
+                  </summary>
+                  <div class="nhsuk-details__text">
+                    <p>The information you provide will be used to authenticate your application.</p>
+                  </div>
+                </details>
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label" for="firstname" id="fname-label">First name</label>
+                  <input class="nhsuk-input nhsuk-input--width-20" id="firstname" name="firstname" type="text" autocomplete="given-name" />
+                </div>
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label" for="lname" id="lname-label">Last name</label>
+                  <input class="nhsuk-input nhsuk-input--width-20" id="lname" name="lname" type="text" autocomplete="family-name" />
+                </div>
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label" for="nhsNumber" id="nhs-label">NHS number</label>
+                  <div class="nhsuk-hint" id="nhsNo-hint">Your NHS number is a 10 digit number that you find on any letter the NHS has sent you. For example, 485 777 3456.</div>
+                  <input class="nhsuk-input nhsuk-input--width-20" id="nhsNumber" name="nhsNumber" type="text" inputmode="numeric" aria-describedby="nhsNo-hint" />
+                </div>
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label" for="email" id="email-label">Email (optional)</label>
+                  <input class="nhsuk-input nhsuk-input--width-20" id="email" type="email" spellcheck="false" name="email" autocomplete="email" />
+                </div>
+              </fieldset>
+              <button class="nhsuk-button" id="next-button" type="submit">Continue</button>
+              <p><a href="/">Cancel</a></p>
+            </form>
           </div>
         </div>
       </main>
     </div>
+    <style>
+      .nhsuk-tag {
+        background-color: #007f3b;
+        border: 1px solid #007f3b;
+      }
+    </style>
     <footer role="contentinfo">
       <div class="nhsuk-footer" id="nhsuk-footer">
         <div class="nhsuk-width-container">
-          <!-- <h2 class="nhsuk-u-visually-hidden">Support links</h2>
-          <ul class="nhsuk-footer__list">
+          <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+          <!-- <ul class="nhsuk-footer__list">
             <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Accessibility resources</a></li>
           </ul> -->
           <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
