@@ -41,7 +41,7 @@
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
     <header class="nhsuk-header" id="nhs-global-header" role="banner">
-      <!-- <a class="nhsuk-skip-link nhsuk-skip-link-header no-print" href="#main-content">Skip to main content</a> -->
+      <a class="nhsuk-skip-link nhsuk-skip-link-header no-print" href="#main-content">Skip to main content</a>
       <div class="nhsuk-width-container nhsuk-header__container">
         <div class="nhsuk-header__logo nhsuk-header__logo--clear-fix">
           <a class="nhsuk-header__link nhsuk-header__link--service" id="logo"
@@ -65,78 +65,74 @@
       <div class="nhsuk-phase-banner nhsuk-u-margin-bottom-5 no-print" role="region">
         <p class="nhsuk-phase-banner__content">
           <strong class="nhsuk-tag nhsuk-phase-banner__content__tag">
-            BAD
+            DEMO
           </strong>
           <span class="nhsuk-phase-banner__text">This is page is for demonstration purposes</span>
         </p>
       </div>
-      <div class="nhsuk-main-wrapper nhsuk-u-margin-top-1 nhsuk-u-padding-top-1" id="main-content">
+      <main class="nhsuk-main-wrapper nhsuk-u-margin-top-1 nhsuk-u-padding-top-1" id="main-content" role="main">
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-two-thirds">
-            <form class="form">
-              <fieldset class="nhsuk-fieldset">
-                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-                  <h1 class="nhsuk-fieldset__heading">Application details</h1>
-                </legend>
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label" for="firstname" id="fname-label">First name</label>
-                  <input tabindex="2" class="nhsuk-input nhsuk-input--width-20" id="firstname" name="firstname" type="text" autocomplete="no" />
-                </div>
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label" for="surname" id="lname-label">Last name</label>
-                  <input tabindex="4"class="nhsuk-input nhsuk-input--width-20" id="lname" name="surname" type="text" autocomplete="no" />
-                </div>
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label" for="nhsNumber" id="nhs-label">NHS number</label>
-                  <div class="nhsuk-hint" id="nhsNo-hint">Your NHS number is a 10 digit number that you find on any letter the NHS has sent you. For example, 485 777 3456.</div>
-                  <input tabindex="1" class="nhsuk-input nhsuk-input--width-20" id="nhsNumber" name="nhsNumber" type="text" autocomplete="no" />
-                </div>
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label" for="e" id="email-label">Email</label>
-                  <input tabindex="3" class="nhsuk-input nhsuk-input--width-20" id="e" type="text" autocomplete="no" />
-                </div>
-              </fieldset>
-              <button class="nhsuk-button" id="next-button">Next</button>
-              <button class="nhsuk-button" id="cancel-button">Cancel</button>
-            </form>
-            <details class="nhsuk-details">
-              <summary class="nhsuk-details__summary">
-                <span class="nhsuk-details__summary-text">
-                  Why we need your information
-                </span>
-              </summary>
-              <div class="nhsuk-details__text">
-                <p>The information you provide will be used to authenticate your application.</p>
-              </div>
-            </details>
+            <div class="nhsuk-form-group" id="question_selectedoption">
+              <h1 id="page_h1_title" class="nhsuk-heading-l">What is wrong with the inaccessible page</h1>
+             
+              <h2>No skip link</h2>
+              <p>A skip link helps users using assistive technology to skip repeated content such as headers and get straight to the main content of the page.</p>
+              <p>Without the skip link, it can be frustrating for users to repeatedly hear the same boilerplate information.</p>
+              
+              <h2>Last name input doesn't have a label</h2>
+              <p>While it looks like there's a label for the last name input, it has not been correctly coded to link to the input.</p>
+              <p>This means clicking the text does not focus on the input. When the input is focussed the text is not read out on a screen reader.</p>
+
+              <h2>NHS number doesn't have a link to the hint text</h2>
+              <p>Hint text can be helpful and we can use aria tags to link it to an input.</p>
+              <p>By using 'aria-describedby="hint-text-id"' the hint text will be announced to screen reader users when the focus is on the input.</p>
+
+              <h2>Autocomplete off</h2>
+              <p>Browsers autocomplete function is helpful as it allows common information to be input quickly.</p>
+              <p>By restricting this or marking up the input incorrectly it can be frustrating to our users who now have to input that data manually.</p>
+              
+              <h2>Tab order</h2>
+              <p>When using a keyboard, tabbing through the page takes you in an illogical order. This could be hard to follow for users. It's a much better experience to follow the logical flow of the page.</p>
+
+              <h2>No focus styles on the first name input</h2>
+              <p>There's no indication that the first name input is actually focused. Focus styles are important for showing where on the page the user currently is.</p>
+
+              <h2>Buttons are too close together</h2>
+              <p>The 'next' and 'cancel' buttons are too close together. A user with Parkinsons could click 'cancel' by mistake and have to spend time entering their information again.</p>
+              
+              <h2>Email and NHS Number types are wrong</h2>
+              <p>Having the correct semantic information for inputs means that the correct keyboard displays for users on mobiles.</p>
+              <p>This is beneficial for all users as a number pad will appear for numbers and @ symbol may be more available for emails.</p>
+
+              <h2>Information under the buttons could be missed</h2>
+              <p>A user using a screen reader may not be aware of the content under the buttons. If they fill in their information and click next, they might not know they've missed any information at all.</p>
+
+              <h2>Elements not contained by landmarks</h2>
+              <p>Writing our pages in semantic and correct HTML5 enables the page to be parsed correctly by assistive technologies.</p>
+              <p>In this instance, there is no main tag on the page. Content could be missed if landmark tags are incorrectly labelled.</p>
+
+              <h2>Next button instead of Continue</h2>
+              <p>Continue is the standard text for a button that progresses a user in a journey.</p>
+              <p>'Next' is a common command for speech recognition users. Users saying 'click next' might not be able to access the 'Next' button.</p>
+              <p>Assistive technology may interrupt 'Next' as the 'next bit of content, 'next link' or 'next tab'. Using Continue makes it easier for speech recognition software to target the button.</p>
+            
+            </div>
           </div>
         </div>
-      </div>
-        <style>
-          input#firstname:focus {
-            border: none;
-            outline: none;
-          }
-        </style>
+      </main>
     </div>
     <footer role="contentinfo">
       <div class="nhsuk-footer" id="nhsuk-footer">
         <div class="nhsuk-width-container">
-          <p>This page purposefully has accessibility issues for demonstration purposes.</p>
-          <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+          <!-- <h2 class="nhsuk-u-visually-hidden">Support links</h2>
           <ul class="nhsuk-footer__list">
-            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="/what-is-wrong.html">What is wrong with this page</a></li>
-          </ul>
+            <h2 class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Accessibility resources</a></h2>
+          </ul> -->
           <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
         </div>
       </div>
     </footer>
-    <style>
-      .nhsuk-tag {
-        background-color: #a10000;
-        border: 1px solid #a10000;
-      }
-    </style>
   
   <script src="/static/jquery.js"></script>
 </body>
