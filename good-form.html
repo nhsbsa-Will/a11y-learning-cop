@@ -78,16 +78,6 @@
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                   <h1 class="nhsuk-fieldset__heading">Application details</h1>
                 </legend>
-                <details class="nhsuk-details">
-                  <summary class="nhsuk-details__summary">
-                    <span class="nhsuk-details__summary-text">
-                      Why we need your information
-                    </span>
-                  </summary>
-                  <div class="nhsuk-details__text">
-                    <p>The information you provide will be used to authenticate your application.</p>
-                  </div>
-                </details>
                 <div class="nhsuk-form-group">
                   <label class="nhsuk-label" for="firstname" id="fname-label">First name</label>
                   <input class="nhsuk-input nhsuk-input--width-20" id="firstname" name="firstname" type="text" autocomplete="given-name" />
@@ -106,7 +96,19 @@
                   <input class="nhsuk-input nhsuk-input--width-20" id="email" type="email" spellcheck="false" name="email" autocomplete="email" />
                 </div>
               </fieldset>
-              <button class="nhsuk-button" id="next-button" type="submit">Continue</button>
+
+              <details class="nhsuk-details">
+                <summary class="nhsuk-details__summary">
+                  <span class="nhsuk-details__summary-text">
+                    Why we need your information
+                  </span>
+                </summary>
+                <div class="nhsuk-details__text">
+                  <p>The information you provide will be used to authenticate your application.</p>
+                </div>
+              </details>
+
+              <button class="nhsuk-button" id="next-button" type="submit" data-module="nhsuk-button">Continue</button>
               <p><a href="/">Cancel</a></p>
             </form>
           </div>
